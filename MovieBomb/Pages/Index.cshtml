@@ -1,10 +1,27 @@
 ﻿@page
 @model IndexModel
+
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Movie BOMB";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Welcome to Movie B.O.M.B.</h1>
+
+<h2>
+    <a asp-page="Create">Start a New Game</a>
+</h2>
+
+<h3> or </h3>
+
+<h2 asp-page="Create">Join an Existing Game</h2>
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="GameCode" class="control-label"></label>
+        <input asp-for="GameCode" class="form-control" />
+        <span asp-validation-for="GameCode" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>

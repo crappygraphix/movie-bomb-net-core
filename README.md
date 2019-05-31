@@ -22,6 +22,15 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet tool install --global dotnet-aspnet-codegenerator
 ```
 
+# Creating DB Migrations (code first)
+
+From the `MovieBomb` folder.
+
+```
+dotnet ef migrations add MigrationName
+dotnet ef database update
+```
+
 # Launch
 
 From the `MovieBomb` folder.

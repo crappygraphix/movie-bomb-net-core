@@ -31,6 +31,9 @@ namespace MovieBomb
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddEntityFrameworkNpgsql()
+                .AddDbContext<MovieBomb.Data.MovieBombContext>()
+                .BuildServiceProvider();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
